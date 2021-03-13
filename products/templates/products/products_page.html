@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}template-homepage{% endblock %}
+{% block contenthead %}
+<!-- ======= Header ======= -->
+<header id="header" style="background: rgba(40, 40, 40, 0.9);" class="fixed-top ">
+	<div class="container-fluid">
+
+		<div class="row justify-content-center">
+			<div class="col-xl-9 d-flex align-items-center justify-content-between">
+
+          <!-- <a href="index.html" class="logo">
+            <img src="assets/img/dorna.png" alt="" class="img-fluid">
+        </a> -->
+
+        <h1 class="logo">
+        	<a href="https://dornawing.com/">DornaWing</a>
+        </h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+
+        <nav class="nav-menu d-none d-lg-block">
+        	<ul>
+        		<li><a href="https://dornawing.com/">Home</a></li>
+        		<li><a href="/about">About</a></li>
+        		<!--<li class="active"><a href="/products">Products</a></li>-->
+        		<li><a href="/news">News</a></li> 
+        		<li><a href="../#contactskip">Contact Us</a></li>
+        	</ul>
+        </nav><!-- .nav-menu -->
+
+        <!-- <a href="#about" class="get-started-btn scrollto">Get Started</a> -->
+        
+    </div>
+</div>
+
+</div>
+</header><!-- End Header -->
+{% endblock %}
+
+{% block content %}
+
+{% for post in posts.reverse %}
+
+<div class="section" >
+
+	<main id="main">
+		<section id="products" class="products">
+			<div class="container" data-aos="fade-up">        
+
+				<div class="row">
+
+					<div class="col-lg-6 pt-4 pt-lg-0 content">
+						<h3>{{ post.products_title }}</h3>
+						<p class="font-italic">
+							{{ post.products_text|safe }}
+						</p>
+						<div class="row">
+							<div class="col-lg-6">
+								<ul>									
+										{% for tbl in post.left_table %}
+										<li>
+											<li><i class="icofont-rounded-right"></i> <strong>{{ tbl }}</strong> </li>
+										</li>
+										{% endfor %}
+									
+								</ul>
+							</div>
+							<div class="col-lg-6">
+								<ul>
+										{% for tbl in post.right_table %}
+										<li>
+											<li><i class="icofont-rounded-right"></i> <strong>{{ tbl }}</strong> </li>
+										</li>
+										{% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6">
+						{% image post.products_img max-2000x2000 as products_img %}
+						<img src="{{ products_img.url }}" class="img-fluid" alt="">
+					</div>
+				</div>
+				
+			</div>
+		</section><!-- End products Section --> 
+</div>
+{% endfor %}	
+</main><!-- End #main -->
+{% endblock %}
+
+{% block extra_js %}
+<script>
+	new fullpage('#fullpage', {
+	    //options here
+	    autoScrolling:true,
+	    scrollHorizontally: true,
+	    responsiveWidth: 900
+	});
+</script>
+{% endblock %}

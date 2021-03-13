@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}template-homepage{% endblock %}
+{% block contenthead %}
+<!-- ======= Header ======= -->
+  <header id="header" style="background: rgba(40, 40, 40, 0.9);" class="fixed-top ">
+    <div class="container-fluid">
+
+      <div class="row justify-content-center">
+        <div class="col-xl-9 d-flex align-items-center justify-content-between">
+
+          <div class="d-flex flex-nowrap bd-highlight">
+
+				<div class="order-3 p-2"><h1 class="logo">
+					<a href="https://dornawing.com/">DornaWing</a>
+					</h1>
+				</div>
+
+				<div class="order-2 p-2">
+					<a href="https://dornawing.com/" class="logo">
+						<img src="../static/img/Logo180x180.png" alt="" class="img-fluid">
+					  </a>
+				</div>
+
+			  </div>
+
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li><a href="https://dornawing.com/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <!--<li><a href="/products">Products</a></li>-->
+              <li class="active"><a href="/news">News</a></li> 
+              <li><a href="../#contactskip">Contact Us</a></li>
+            </ul>
+          </nav><!-- .nav-menu -->
+
+          <!-- <a href="#about" class="get-started-btn scrollto">Get Started</a> -->
+          
+        </div>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+{% endblock %}
+
+{% block content %}
+{% for post in posts.reverse %}
+<div class="section" >
+	<main id="main">
+		<!-- ======= products Section ======= -->
+		<section id="products" class="products">
+			<div class="container" data-aos="fade-up">
+
+				
+				<div class="row">
+					<div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+						{% image post.news_img max-2000x2000 as news_img %}
+						<img src="{{ news_img.url }}" class="img-fluid" alt="">
+					</div>
+					<div class="col-lg-6 order-2 order-lg-1 pt-3 pt-lg-0">
+						<h3>{{ post.news_title }}</h3>
+						<p>
+							{{ post.news_text|safe }}
+						</p>
+						<!-- <a href="#" class="more-details">More Details</a> -->
+					</div>
+				</div>
+
+			</div>
+
+		</section><!-- End products Section -->
+</div>
+{% endfor %}
+</main><!-- End #main -->
+{% endblock %}
+
+{% block extra_js %}
+<script>
+	new fullpage('#fullpage', {
+	    //options here
+	    autoScrolling:true,
+	    scrollHorizontally: true,
+	    responsiveWidth: 900
+	});
+</script>
+{% endblock %}

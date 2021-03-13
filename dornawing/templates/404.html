@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}template-homepage{% endblock %}
+{% block contenthead %}
+<!-- ======= Header ======= -->
+  <header id="header" style="background: rgba(40, 40, 40, 0.9);" class="fixed-top ">
+    <div class="container-fluid">
+
+      <div class="row justify-content-center">
+        <div class="col-xl-9 d-flex align-items-center justify-content-between">
+
+          <!-- <a href="index.html" class="logo">
+            <img src="assets/img/dorna.png" alt="" class="img-fluid">
+          </a> -->
+
+          <h1 class="logo">
+            <a href="https://dornawing.com/">DornaWing</a>
+          </h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li><a href="https://dornawing.com/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <!--<li><a href="/products">Products</a></li>-->
+              <li><a href="/news">News</a></li> 
+              <li><a href="../#contactskip">Contact Us</a></li>
+            </ul>
+          </nav><!-- .nav-menu -->
+
+          <!-- <a href="#about" class="get-started-btn scrollto">Get Started</a> -->
+          
+        </div>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+    	<main id="main">
+            <section id="about" class="about">
+    			<div class="container">
+    				<div class="section-title">
+    					<h2>Page 404</h2>
+    					<p>Page not found</p>
+    				</div>
+    				<div class="row content">
+    					<div class="col-lg-12">
+    						<p>
+    							If you entered a web address, check it is correct.
+    						</p>
+    
+    					</div>					
+    				</div>
+    			</div>
+    		</section><!-- End About Us Section -->
+        </main><!-- End #main -->	
+    </div>
+{% endblock %}
+{% block extra_js %}
+<script>
+	new fullpage('#fullpage', {
+	    //options here
+	    autoScrolling:true,
+	    scrollHorizontally: true,
+	    responsiveWidth: 900
+	});
+</script>
+{% endblock %}

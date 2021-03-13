@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}template-homepage{% endblock %}
+{% block contenthead %}
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 d-flex align-items-center justify-content-between">
+
+              <div class="d-flex flex-nowrap bd-highlight">
+
+				<div class="order-3 p-2"><h1 class="logo">
+					<a href="https://dornawing.com/">DornaWing</a>
+					</h1>
+				</div>
+
+				<div class="order-2 p-2">
+					<a href="https://dornawing.com/" class="logo">
+						<img src="../static/img/Logo180x180.png" alt="" class="img-fluid">
+					  </a>
+				</div>
+
+			  </div>
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                  <li class="active"><a href="https://dornawing.com/">Home</a></li>
+                  <li><a href="/about">About</a></li>
+              <!--<li><a href="/products">Products</a></li>-->
+                  <li><a href="/news">News</a></li> 
+                  <li><a href="#contactskip">Contact Us</a></li>                     
+              </ul>
+            </nav><!-- .nav-menu -->
+            <!-- <a href="#about" class="get-started-btn scrollto">Get Started</a> -->
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="section" >
+	<!-- ======= Hero Section ======= -->
+	{% image self.banner_image max-2000x2000 as banner_image %}
+	<section id="hero" style="background-image: url({{ banner_image.url }});" class="d-flex flex-column justify-content-center">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xl-8">
+					<h1>{{ page.header_title_text }}</h1>
+					<h2>{{ page.header_text }}</h2>
+					<!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a> -->
+				</div>
+			</div>
+		</div>
+	</section><!-- End Hero -->
+</div>
+
+<div class="section">
+	<main id="main">
+		<!-- ======= About Us Section ======= -->
+		<section id="about" class="about">
+			<div class="container">
+
+				<div class="section-title">
+					<h2>About Us</h2>
+					<p>{{ page.about_title }}</p>
+				</div>
+
+				<div class="row content">
+					<div class="col-lg-6">
+						<p>
+							{{ page.about_left_richtext|safe }}
+						</p>
+
+					</div>
+					<div class="col-lg-6 pt-4 pt-lg-0">
+						<p>
+							{{ page.about_right_richtext|safe }}
+						</p>
+						<a href="/about" class="btn-learn-more">For More Information</a>
+					</div>
+				</div>
+
+			</div>
+		</section><!-- End About Us Section -->
+	</div>
+
+	<div class="section" data-anchor="contactskip">
+		<!-- ======= Contact Section ======= -->
+		<section id="contact" class="contact">
+			<div class="container">
+
+				<div  class="section-title">
+					<h2>Contact</h2>
+
+				</div>
+			</div>
+
+			<div class="container">
+
+				<div class="row mt-5">
+
+					<div class="col-lg-4">
+						<div class="info">
+							<div class="address">
+								<i class="ri-map-pin-line"></i>
+								<h4>Location:</h4>
+								<p>{{ page.location }}</p>
+							</div>
+
+							<div class="email">
+								<i class="ri-mail-line"></i>
+								<h4>Email:</h4>
+								<p>{{ page.email }}</p>
+							</div>
+
+							<div class="phone">
+								<i class="ri-phone-line"></i>
+								<h4>Call:</h4>
+								<p>{{ page.call }}</p>
+							</div>
+
+						</div>
+
+					</div>						
+
+					<div class="col-lg-8 mt-5 mt-lg-0">
+
+						<form action="{% pageurl page %}" method="POST" role="form" class="php-email-form">
+							<div class="row">
+								{% csrf_token %}
+								<div class="col-md-6 form-group">
+									{{ form.full_name }}
+								</div>
+
+								<div class="col-md-6 form-group mt-3 mt-md-0">
+									{{ form.email }}
+								</div>
+							</div>
+
+							<div class="form-group mt-3">
+								{{ form.subjects }}
+							</div>
+
+							<div class="form-group mt-3">
+								{{ form.message }}
+							</div>
+
+
+							<div class="mb-3">
+								<div class="loading">Loading</div>
+								<div class="error-message"></div>
+								<div class="sent-message">Your message has been sent. Thank you!</div>
+							</div>
+							<div class="text-center"><button type="submit">Send Message</button></div>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+		</section><!-- End Contact Section -->
+	</div>
+</main><!-- End #main -->
+{% endblock %}
+
+{% block extra_js %}
+	<script>
+	    new fullpage('#fullpage', {
+	    //options here
+	    autoScrolling:true,
+	    scrollHorizontally: true,
+	    responsiveWidth: 1100,
+	    anchors: ['','','contactskip',''],
+	    navigationPosition: 'right',
+	    navigationTooltips: ['First page', 'Second page', 'Third and last page']
+	    });
+    </script>
+{% endblock %}
