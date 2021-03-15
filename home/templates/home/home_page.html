@@ -6,9 +6,9 @@
   <header id="header" class="fixed-top ">
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-xl-9 d-flex align-items-center justify-content-between">
+            <div class="col-xl-12 d-flex align-items-center justify-content-between">
 
-              	<div class="d-flex flex-nowrap bd-highlight">
+				<div class="d-flex flex-nowrap bd-highlight">
 
 					<div class="order-3 p-2"><h1 class="logo">
 						<a href="https://dornawing.com/">DornaWing</a>
@@ -17,13 +17,13 @@
 
 					<div class="order-2 p-2">
 						<a href="https://dornawing.com/" class="logo">
-							<img src="../static/img/Logo180x180.png" alt="" class="img-fluid">
-						</a>
+							<img src="{% static '/img/Logo 180x180.png' %}" alt="" class="img-fluid">
+						  </a>
 					</div>
 
-			  	</div>
+				</div>
 
-				<nav class="nav-menu d-none d-lg-block">
+				<nav class="col-xl-4 nav-menu d-none d-lg-block">
 					{% main_menu template="menus/bootstrap3/main_menu_dropdown.html" %}
 				</nav>
 				<!-- .nav-menu -->
@@ -118,7 +118,7 @@
 
 						</div>
 
-					</div>						
+					</div>
 
 					<div class="col-lg-8 mt-5 mt-lg-0">
 

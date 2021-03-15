@@ -141,7 +141,9 @@ h1, h2, h3, h4, h5, h6 {
 #header .logo {
   font-size: 28px;
   margin: 0;
-  padding: 16%;/*0*/
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-top: 15%;/*0*/
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -152,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo img {
-  max-height: 80px;/*40*/
+  max-height: 75px;/*40*/
 }
 
 @media (max-width: 992px) {
@@ -187,7 +189,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   color: rgba(255, 255, 255, 0.7);
   transition: 0.3s;
-  font-size: 14px;
+  font-size: 16px;/*14*/
   padding: 25px 3px;
   font-weight: 600;
   font-family: "Open Sans", sans-serif;
