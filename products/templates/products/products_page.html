@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags menu_tags %}
 {% block body_class %}template-homepage{% endblock %}
 {% block contenthead %}
 <!-- ======= Header ======= -->
@@ -19,17 +19,9 @@
         <!-- Uncomment below if you prefer to use an image logo -->
 
         <nav class="nav-menu d-none d-lg-block">
-        	<ul>
-        		<li><a href="https://dornawing.com/">Home</a></li>
-        		<li><a href="/about">About</a></li>
-        		<!--<li class="active"><a href="/products">Products</a></li>-->
-        		<li><a href="/news">News</a></li> 
-        		<li><a href="../#contactskip">Contact Us</a></li>
-        	</ul>
-        </nav><!-- .nav-menu -->
-
-        <!-- <a href="#about" class="get-started-btn scrollto">Get Started</a> -->
-        
+			{% main_menu template="menus/bootstrap3/main_menu_dropdown.html" %}
+		</nav>
+		<!-- .nav-menu -->
     </div>
 </div>
 
