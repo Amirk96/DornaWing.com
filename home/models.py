@@ -89,10 +89,9 @@ class HomePage(AbstractEmailForm, Page):
 	header_title_text = models.CharField('Header Title', max_length=50, default=" ")
 	header_text = models.CharField('Header Text', max_length=100, default=" ")
 
-	about_title = models.CharField('About Title', max_length=100, default=" ")
-	about_left_richtext = RichTextField('About Us Left Paragraph', max_length=500, blank=True)
-	about_right_richtext = RichTextField('About Us Right Paragraph', max_length=500, blank=True)
-	about_us_img = models.ForeignKey(
+	our_story_title = models.CharField('Our Story Title', max_length=100, default=" ")
+	our_story_richtext = RichTextField('Our Story', max_length=1000, blank=True)
+	our_story_img = models.ForeignKey(
 		"wagtailimages.Image",
 		blank=False,
 		null=True,
@@ -116,10 +115,9 @@ class HomePage(AbstractEmailForm, Page):
 	FieldPanel('header_title_text', classname="full"),
 	FieldPanel('header_text', classname="full"),
 
-	FieldPanel('about_title', classname="full"),
-	FieldPanel('about_left_richtext', classname="full"),
-	FieldPanel('about_right_richtext', classname="full"),
-	ImageChooserPanel('about_us_img'),
+	FieldPanel('our_story_title', classname="full"),
+	FieldPanel('our_story_richtext', classname="full"),
+	ImageChooserPanel('our_story_img'),
 
 	FieldPanel('location', classname="full"),
 	FieldPanel('email', classname="full"),

@@ -3,12 +3,12 @@
 {% block body_class %}template-homepage{% endblock %}
 {% block contenthead %}
 <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
+  <header id="header" style="background: rgba(40, 40, 40, 0.9);" class="fixed-top ">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-xl-12 d-flex align-items-center justify-content-between">
 
-              	<div class="d-flex flex-nowrap bd-highlight">
+				<div class="d-flex flex-nowrap bd-highlight">
 
 					<div class="order-3 p-2"><h1 class="logo">
 						<a href="https://dornawing.com/">DornaWing</a>
@@ -21,9 +21,9 @@
 						  </a>
 					</div>
 
-			  	</div>
+				</div>
 
-			  	<nav class="col-xl-4 nav-menu d-none d-lg-block">
+				<nav class="col-xl-4 nav-menu d-none d-lg-block">
 					{% main_menu template="menus/bootstrap3/main_menu_dropdown.html" %}
 				</nav>
 				<!-- .nav-menu -->
@@ -57,26 +57,24 @@
 		<section id="about" class="about">
 			<div class="container">
 
-
-
-				<div class="row content">
-					<div class="section-title">
-						<h2>Our Story</h2>
-
-					</div>
-
-					<div class="col-lg-6 order-1 order-lg-2">
-						{% image self.our_story_img max-2000x2000 as our_story_img %}
-						<img src="{{ our_story_img.url }}" class="img-fluid" alt="">
-					</div>
-					<div class="col-lg-6 order-2 order-lg-1 pt-3 pt-lg-0">
-						<h3>{{ page.our_story_title }}</h3>						
-						<p>
-							{{ page.our_story_richtext|safe }}
-						</p>
-					</div>
+				<div class="section-title">
+					<h2>About Us</h2>
+					<p>{{ page.about_title }}</p>
 				</div>
 
+				<div class="row content">
+					<div class="col-lg-6">
+						<p>
+							{{ page.about_left_richtext|safe }}
+						</p>
+
+					</div>
+					<div class="col-lg-6 pt-4 pt-lg-0">
+						<p>
+							{{ page.about_right_richtext|safe }}
+						</p>						
+					</div>
+				</div>
 
 			</div>
 		</section><!-- End About Us Section -->

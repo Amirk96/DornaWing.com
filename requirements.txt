@@ -5,6 +5,7 @@ beautifulsoup4==4.8.2
 certifi==2020.12.5
 chardet==4.0.0
 Django==3.1.6
+django-cogwheels==0.3
 django-enumchoicefield==2.0.0
 django-filter==2.4.0
 django-modelcluster==5.1
@@ -29,6 +30,7 @@ tablib==3.0.0
 Unidecode==1.2.0
 urllib3==1.26.3
 wagtail==2.11
+wagtailmenus==3.0.2
 wagtailvideos==2.10.2
 webencodings==0.5.1
 Willow==1.4

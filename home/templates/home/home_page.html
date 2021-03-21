@@ -10,8 +10,9 @@
 
 				<div class="d-flex flex-nowrap bd-highlight">
 
-					<div class="order-3 p-2"><h1 class="logo">
-						<a href="https://dornawing.com/">DornaWing</a>
+					<div class="order-3 p-2">
+						<h1 class="logo">
+							<a href="https://dornawing.com/">DornaWing</a>
 						</h1>
 					</div>
 
@@ -57,25 +58,26 @@
 		<section id="about" class="about">
 			<div class="container">
 
-				<div class="section-title">
-					<h2>About Us</h2>
-					<p>{{ page.about_title }}</p>
-				</div>
+
 
 				<div class="row content">
-					<div class="col-lg-6">
-						<p>
-							{{ page.about_left_richtext|safe }}
-						</p>
+					<div class="section-title">
+						<h2>Our Story</h2>
 
 					</div>
-					<div class="col-lg-6 pt-4 pt-lg-0">
+
+					<div class="col-lg-6 order-1 order-lg-2">
+						{% image self.our_story_img max-2000x2000 as our_story_img %}
+						<img src="{{ our_story_img.url }}" class="img-fluid" alt="">
+					</div>
+					<div class="col-lg-6 order-2 order-lg-1 pt-3 pt-lg-0">
+						<h3>{{ page.our_story_title }}</h3>						
 						<p>
-							{{ page.about_right_richtext|safe }}
+							{{ page.our_story_richtext|safe }}
 						</p>
-						<a href="/about" class="btn-learn-more">For More Information</a>
 					</div>
 				</div>
+
 
 			</div>
 		</section><!-- End About Us Section -->
@@ -168,7 +170,7 @@
 	    //options here
 	    autoScrolling:true,
 	    scrollHorizontally: true,
-	    responsiveWidth: 1100,
+	    responsiveWidth: 900,
 	    anchors: ['','','contactskip',''],
 	    navigationPosition: 'right',
 	    navigationTooltips: ['First page', 'Second page', 'Third and last page']
