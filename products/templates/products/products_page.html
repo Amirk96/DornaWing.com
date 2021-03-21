@@ -3,44 +3,34 @@
 {% block body_class %}template-homepage{% endblock %}
 {% block contenthead %}
 <!-- ======= Header ======= -->
-<header id="header" style="background: rgba(40, 40, 40, 0.9);" class="fixed-top ">
+<header id="header" class="fixed-top ">
 	<div class="container-fluid">
-
 		<div class="row justify-content-center">
 			<div class="col-xl-12 d-flex align-items-center justify-content-between">
+				<!-- <a href="index.html" class="logo">
+            	<img src="assets/img/dorna.png" alt="" class="img-fluid"></a> -->
+				<h1 class="logo">
+					<a href="https://dornawing.com/">DornaWing</a>
+				</h1>
+				<!-- Uncomment below if you prefer to use an image logo -->
+				<nav class="col-xl-4 nav-menu d-none d-lg-block">
+					{% main_menu template="menus/bootstrap3/main_menu_dropdown.html" %}
+				</nav>
+				<!-- .nav-menu -->
+			</div>
+		</div>
 
-          <!-- <a href="index.html" class="logo">
-            <img src="assets/img/dorna.png" alt="" class="img-fluid">
-        </a> -->
-
-        <h1 class="logo">
-        	<a href="https://dornawing.com/">DornaWing</a>
-        </h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-
-        <nav class="col-xl-4 nav-menu d-none d-lg-block">
-			{% main_menu template="menus/bootstrap3/main_menu_dropdown.html" %}
-		</nav>
-		<!-- .nav-menu -->
-    </div>
-</div>
-
-</div>
+	</div>
 </header><!-- End Header -->
 {% endblock %}
 
 {% block content %}
-
 {% for post in posts.reverse %}
-
-<div class="section" >
-
+<div class="section">
 	<main id="main">
 		<section id="products" class="products">
-			<div class="container" data-aos="fade-up">        
-
+			<div class="container" data-aos="fade-up">
 				<div class="row">
-
 					<div class="col-lg-6 pt-4 pt-lg-0 content">
 						<h3>{{ post.products_title }}</h3>
 						<p class="font-italic">
@@ -48,22 +38,22 @@
 						</p>
 						<div class="row">
 							<div class="col-lg-6">
-								<ul>									
-										{% for tbl in post.left_table %}
-										<li>
-											<li><i class="icofont-rounded-right"></i> <strong>{{ tbl }}</strong> </li>
-										</li>
-										{% endfor %}
-									
+								<ul>
+									{% for tbl in post.left_table %}
+									<li>
+									<li><i class="icofont-rounded-right"></i> <strong>{{ tbl }}</strong> </li>
+									</li>
+									{% endfor %}
+
 								</ul>
 							</div>
 							<div class="col-lg-6">
 								<ul>
-										{% for tbl in post.right_table %}
-										<li>
-											<li><i class="icofont-rounded-right"></i> <strong>{{ tbl }}</strong> </li>
-										</li>
-										{% endfor %}
+									{% for tbl in post.right_table %}
+									<li>
+									<li><i class="icofont-rounded-right"></i> <strong>{{ tbl }}</strong> </li>
+									</li>
+									{% endfor %}
 								</ul>
 							</div>
 						</div>
@@ -74,21 +64,22 @@
 						<img src="{{ products_img.url }}" class="img-fluid" alt="">
 					</div>
 				</div>
-				
 			</div>
-		</section><!-- End products Section --> 
+		</section><!-- End products Section -->
 </div>
-{% endfor %}	
+{% endfor %}
 </main><!-- End #main -->
 {% endblock %}
 
 {% block extra_js %}
 <script>
 	new fullpage('#fullpage', {
-	    //options here
-	    autoScrolling:true,
-	    scrollHorizontally: true,
-	    responsiveWidth: 900
+		//options here
+		autoScrolling: true,
+		scrollHorizontally: true,
+		responsiveWidth: 900,
+		responsiveHeight: 500,
+		navigation: true,
 	});
 </script>
 {% endblock %}

@@ -132,6 +132,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   z-index: 997;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(40, 40, 40, 0.9);
 }
 
 #header.header-scrolled, #header.header-inner-pages {
