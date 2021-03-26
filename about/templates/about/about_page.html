@@ -81,7 +81,7 @@
 	<section id="members" class="members">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+				<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
 					<div class="member">
 						<div class="member-img">
 							{% image self.first_member_of_team_img max-2000x2000 as first_member_of_team_img %}
@@ -98,7 +98,7 @@
 					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+				<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
 					<div class="member">
 						<div class="member-img">
 							{% image self.second_member_of_team_img max-2000x2000 as second_member_of_team_img %}
@@ -117,7 +117,26 @@
 					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+				<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+					<div class="member">
+						<div class="member-img">
+							{% image self.second_member_of_team_img max-2000x2000 as second_member_of_team_img %}
+							<img src="{{ second_member_of_team_img.url }}" class="img-fluid" alt="">
+							<div class="social">
+								<a href="{{ page.second_member_of_team_linkedin }}"><i class="icofont-linkedin"></i></a>
+							</div>
+						</div>
+						<div class="member-info">
+							<div class="member-info">
+								<h4>{{ page.second_member_of_team_name }}</h4>
+								<span>{{ page.second_member_of_team_position }}</span>
+								<p>{{ page.second_member_of_team_description }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 d-flex align-items-stretch">
 					<div class="member">
 						<div class="member-img">
 							{% image self.third_member_of_team_img max-2000x2000 as third_member_of_team_img %}
